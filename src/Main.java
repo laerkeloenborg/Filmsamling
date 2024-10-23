@@ -25,13 +25,20 @@ public class Main {
                     System.out.println("add the year it was created:");
                     int addYearCreated = addMovie.nextInt();
                     System.out.println("is the movie in color?");
-                    boolean addIsITInColor = addMovie.nextBoolean();
+                    String addIsInColor1 = addMovie.next();
+                    boolean addIsInColor;
+                    if (addIsInColor1.equalsIgnoreCase("yes")){
+                        addIsInColor = true;
+                    } else{
+                        addIsInColor = false;
+                }
+
                     System.out.println("how long is the movie in minutes?:");
                     double addLenghtInMinutes = addMovie.nextDouble();
                     System.out.println("now which genre is it?:");
                     String addGenre = addMovie.next();
 
-                    Movie movie1 = new Movie(addTitle, addDirector, addYearCreated, addIsITInColor, addLenghtInMinutes, addGenre);
+                    Movie movie1 = new Movie(addTitle, addDirector, addYearCreated, addIsInColor, addLenghtInMinutes, addGenre);
                     System.out.println(movie1);
                     break;
                 case 2:
