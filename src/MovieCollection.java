@@ -19,20 +19,27 @@ public class MovieCollection {
         movieCollection.add(movie);
     }
 
-    public String searchMovie(String title) {
+    public String searchMovies(String title) {
+        ArrayList<Movie> matchingMovies = new ArrayList<>();
+
         for (Movie movie : movieCollection) {
-            if (movie.getTitle().equalsIgnoreCase(title)) {
-                return "\nMovie found!\n" + "--------------------\n" +
-                        "Title: " + movie.getTitle() + "\n" +
-                        "Director: " + movie.getDirector() + "\n" +
-                        "Year: " + movie.getYearCreated() + "\n" +
-                        "In color: " + (movie.getIsInColor() ? "Yes" : "No") + "\n" +
-                        "Length: " + movie.getLengthInMinutes() + " minutes\n" +
-                        "Genre: " + movie.getGenre() + "\n" +
-                        "--------------------";
+            if (movie.getTitle().toLowerCase().contains(title.toLowerCase())) {
+                matchingMovies.add(movie);
             }
         }
-        return "\nNo movie found with the title: " + title;
+
+        String result = "";
+
+        for (Movie movie : matchingMovies) {
+            result += "Title: " + movie.getTitle() + "\n";
+            result += "Director: " + movie.getDirector() + "\n";
+            result += "Year: " + movie.getYearCreated() + "\n";
+            result += "In color: " + (movie.getIsInColor() ? "Yes" : "No") + "\n";
+            result += "Length: " + movie.getLengthInMinutes() + " minutes\n";
+            result += "Genre: " + movie.getGenre() + "\n\n";
+        }
+
+        return result;
     }
 
     @Override
