@@ -10,8 +10,12 @@ public class Controller {
         movieCollection1.addMovie(spiderman);
         System.out.println("welcome to my movie collection!");
         int addingmovies = -1;
-        while (addingmovies != 4) {
-            System.out.println("\npress:\n" + "1. for entering a film to the collection\n" + "2. for viewing of movie collection\n" + "3. for searching movie\n" + "4. for exiting");
+        while (addingmovies != 5) {
+            System.out.println("\npress:\n" +
+                    "1. for entering a film to the collection\n" +
+                    "2. for viewing of movie collection\n" +
+                    "3. for searching movie\n" +
+                    "4. for exiting");
             addingmovies = input.nextInt();
             switch (addingmovies) {
                 case 1:
