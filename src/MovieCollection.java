@@ -19,22 +19,20 @@ public class MovieCollection {
         movieCollection.add(movie);
     }
 
-    public Movie searchMovie(String title) {
-        String noMovies = "There is no movies on your list with the title";
-        for (Movie movieCollection : movieCollection) {
-            if (movieCollection.getTitle().equalsIgnoreCase(title)) {
-                return movieCollection;
+    public String searchMovie(String title) {
+        for (Movie movie : movieCollection) {
+            if (movie.getTitle().equalsIgnoreCase(title)) {
+                return "\nMovie found!\n" + "--------------------\n" + "Title: " + movie.getTitle() + "\n" + "Director: " + movie.getDirector() + "\n" + "Year: " + movie.getYearCreated() + "\n" + "In color: " + (movie.getIsInColor() ? "Yes" : "No") + "\n" + "Length: " + movie.getLengthInMinutes() + " minutes\n" + "Genre: " + movie.getGenre() + "\n" + "--------------------";
             }
         }
-
-        return null;
+        return "\nNo movie found with the title: " + title;
     }
 
     @Override
     public String toString() {
         int counter = 0;
         String empty = "";
-        for (Movie movie : movieCollection){
+        for (Movie movie : movieCollection) {
             counter++;
             empty += "\n" + counter + ". " + movie.getTitle();
         }
