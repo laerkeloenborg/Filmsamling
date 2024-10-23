@@ -24,7 +24,6 @@ public class Controller {
                     input.nextLine();
                     String addTitle = input.nextLine();
                     System.out.println("now the director:");
-                    input.nextLine();
                     String addDirector = input.nextLine();
                     System.out.println("add the year it was created:");
                     int addYearCreated = input.nextInt();
