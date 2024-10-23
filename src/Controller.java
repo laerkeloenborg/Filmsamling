@@ -24,9 +24,10 @@ public class Controller {
                 case 1:
                     System.out.println("enter a movie to your collection\n" +
                             "start with a title:");
-                    String addTitle = input.next();
+                    input.nextLine();
+                    String addTitle = input.nextLine();
                     System.out.println("now the director:");
-                    String addDirector = input.next();
+                    String addDirector = input.nextLine();
                     System.out.println("add the year it was created:");
                     int addYearCreated = input.nextInt();
                     System.out.println("is the movie in color?");
