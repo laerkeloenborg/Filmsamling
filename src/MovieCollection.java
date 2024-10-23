@@ -3,7 +3,7 @@ import java.util.ArrayList;
 public class MovieCollection {
     private ArrayList<Movie> movieCollection = new ArrayList<>();
 
-    public MovieCollection(ArrayList<Movie> movieCollection) {
+    public MovieCollection() {
         this.movieCollection = movieCollection;
     }
 
@@ -28,5 +28,16 @@ public class MovieCollection {
         }
 
         return null;
+    }
+
+    @Override
+    public String toString() {
+        int counter = 0;
+        String empty = "";
+        for (Movie movie : movieCollection){
+            counter++;
+            empty += "\n" + counter + ". " + movie.getTitle();
+        }
+        return empty;
     }
 }
