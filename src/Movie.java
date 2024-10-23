@@ -63,7 +63,13 @@ public class Movie {
         this.genre = genre;
     }
 
-
-
-
+    @Override
+    public String toString() {
+        return "Title: " + this.title + "\n" +
+                "Director: " + this.director + "\n" +
+                "Year: " + this.yearCreated + "\n" +
+                "In color: " + (this.isInColor ? "Yes" : "No") + "\n" +
+                "Length: " + this.lengthInMinutes + "\n" +
+                "Genre: " + this.genre;
+    }
 }
