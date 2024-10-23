@@ -22,14 +22,7 @@ public class MovieCollection {
     public String searchMovie(String title) {
         for (Movie movie : movieCollection) {
             if (movie.getTitle().equalsIgnoreCase(title)) {
-                return "\nMovie found!\n" + "--------------------\n" +
-                        "Title: " + movie.getTitle() + "\n" +
-                        "Director: " + movie.getDirector() + "\n" +
-                        "Year: " + movie.getYearCreated() + "\n" +
-                        "In color: " + (movie.getIsInColor() ? "Yes" : "No") + "\n" +
-                        "Length: " + movie.getLengthInMinutes() + " minutes\n" +
-                        "Genre: " + movie.getGenre() + "\n" +
-                        "--------------------";
+                return "\nMovie found!\n" + "--------------------\n" + "Title: " + movie.getTitle() + "\n" + "Director: " + movie.getDirector() + "\n" + "Year: " + movie.getYearCreated() + "\n" + "In color: " + (movie.getIsInColor() ? "Yes" : "No") + "\n" + "Length: " + movie.getLengthInMinutes() + " minutes\n" + "Genre: " + movie.getGenre() + "\n" + "--------------------";
             }
         }
         return "\nNo movie found with the title: " + title;
