@@ -8,10 +8,11 @@ public class Main {
         System.out.println(movie);
 
 
+        System.out.println("welcome to my movie collection!");
         int addingmovies = -1;
         while (addingmovies != 3) {
-            System.out.println("welcome to my movie collection!\n" +
-                    "press:\n" +
+            System.out.println(
+                    "\npress:\n" +
                     "1. for entering a film to the collection\n" +
                     "2. for exiting");
             addingmovies = addMovie.nextInt();
