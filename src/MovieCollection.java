@@ -39,6 +39,32 @@ public class MovieCollection {
     }
 
 
+    public Movie findMovie(String title) {
+        for (Movie movie : movieCollection) {
+            if (movie.getTitle().toLowerCase().contains(title.toLowerCase())) {
+                return movie;
+            }
+        }
+        return null;
+    }
+
+
+    public void editMovie(Movie movie, String title, String director, int yearCreated, boolean isInColor, double lengthInMinutes, String genre) {
+
+
+        movie.setTitle(title);
+        movie.setDirector(director);
+        movie.setYearCreated(yearCreated);
+        movie.setIsInColor(isInColor);
+        movie.setLengthInMinutes(lengthInMinutes);
+        movie.setGenre(genre);
+
+    }
+
+
+
+
+
 
     @Override
     public String toString() {

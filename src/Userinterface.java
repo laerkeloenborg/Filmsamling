@@ -63,7 +63,39 @@ public class Userinterface {
                     System.out.println(searchResult);
                     break;
                 case 4:
-                    System.out.println("you are now exiting the movie collection");
+                    System.out.println("Enter the title of the movie you want to edit:");
+                    input.nextLine();
+                    String searchMovieToEdit = input.nextLine();
+
+                    Movie movieToEdit = controller.findMovie(searchMovieToEdit);
+                    if (movieToEdit == null) {
+                        System.out.println("Movie not found.");
+                        break;
+                    }
+
+                    System.out.println("movie information:");
+                    System.out.println(movieToEdit);
+
+                    System.out.println("new info:");
+
+                    System.out.println("Title:");
+                    String newTitle = input.nextLine();
+                    System.out.println("Director:");
+                    String newDirector = input.nextLine();
+                    System.out.println("Year Created:");
+                    int newYear = input.nextInt();
+                    System.out.println("Is in color:");
+                    boolean newColor = input.nextBoolean();
+                    System.out.println("Length:");
+                    double newLength = input.nextDouble();
+                    System.out.println("Genre:");
+                    String newGenre = input.nextLine();
+
+
+                    controller.editMovie(movieToEdit, newTitle, newDirector, newYear, newColor, newLength, newGenre);
+
+                    System.out.println("updated movie info:");
+                    System.out.println(movieToEdit);
                     break;
                 default:
             }
