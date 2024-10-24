@@ -61,6 +61,7 @@ public class Userinterface {
                     String searchTitle = input.next();
                     String searchResult = controller.searchMovies(searchTitle);
                     System.out.println(searchResult);
+                    break;
                 case 4:
                     System.out.println("you are now exiting the movie collection");
                     break;
