@@ -91,50 +91,24 @@ public class Userinterface {
                         int editChoice = input.nextInt();
                         input.nextLine();
 
-                        switch (editChoice) {
-                            case 1:
-                                System.out.println("Enter new title:");
-                                String newTitle = input.nextLine();
-                                movieToEdit.setTitle(newTitle);
-                                break;
-                            case 2:
-                                System.out.println("Enter new director:");
-                                String newDirector = input.nextLine();
-                                movieToEdit.setDirector(newDirector);
-                                break;
-                            case 3:
-                                System.out.println("Enter new year:");
-                                int newYear = input.nextInt();
-                                movieToEdit.setYearCreated(newYear);
-                                break;
-                            case 4:
-                                System.out.println("Is the movie in color? (true/false):");
-                                boolean newColor = input.nextBoolean();
-                                movieToEdit.setIsInColor(newColor);
-                                break;
-                            case 5:
-                                System.out.println("Enter new length (in minutes):");
-                                double newLength = input.nextDouble();
-                                movieToEdit.setLengthInMinutes(newLength);
-                                break;
-                            case 6:
-                                System.out.println("Enter new genre:");
-                                String newGenre = input.nextLine();
-                                movieToEdit.setGenre(newGenre);
-                                break;
-                            case 7:
-                                editingMovie = false;
-                                break;
-                            default:
-                                System.out.println("Invalid option");
+                        if (editChoice == 7) {
+                            editingMovie = false;
+                            continue;
                         }
 
-                        if (editingMovie) {
+                        if (editChoice >= 1 && editChoice <= 6) {
+                            System.out.println("Enter new value:");
+                            String newValue = input.nextLine();
+                            controller.editMovie(movieToEdit, editChoice, newValue);
+
                             System.out.println("\nUpdated movie information:");
                             System.out.println(movieToEdit);
+                        } else {
+                            System.out.println("Invalid option");
                         }
                     }
-                    break;
+
+                break;
                 case 5:
 
                 default:
