@@ -61,7 +61,8 @@ public class MovieCollection {
                 movie.setYearCreated(Integer.parseInt(newValue));
                 break;
             case 4:
-                movie.setIsInColor(Boolean.parseBoolean(newValue));
+                boolean isInColor = newValue.equalsIgnoreCase("yes");
+                movie.setIsInColor(isInColor);
                 break;
             case 5:
                 movie.setLengthInMinutes(Double.parseDouble(newValue));
