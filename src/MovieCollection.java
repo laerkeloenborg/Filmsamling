@@ -28,6 +28,10 @@ public class MovieCollection {
             }
         }
 
+        if (matchingMovies.isEmpty()) {
+            return "No movies matching your request..";
+        }
+
         String result = "";
 
         for (Movie movie : matchingMovies) {
