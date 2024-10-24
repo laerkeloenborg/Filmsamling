@@ -20,31 +20,25 @@ public class MovieCollection {
     }
 
     public String searchMovies(String title) {
-        ArrayList<Movie> matchingMovies = new ArrayList<>();
+        String result = "";
+        boolean foundAny = false;
 
         for (Movie movie : movieCollection) {
             if (movie.getTitle().toLowerCase().contains(title.toLowerCase())) {
-                matchingMovies.add(movie);
+                result += "Title: " + movie.getTitle() + "\n";
+                result += "Director: " + movie.getDirector() + "\n";
+                result += "Year: " + movie.getYearCreated() + "\n";
+                result += "In color: " + (movie.getIsInColor() ? "Yes" : "No") + "\n";
+                result += "Length: " + movie.getLengthInMinutes() + " minutes\n";
+                result += "Genre: " + movie.getGenre() + "\n\n";
+                foundAny = true;
             }
         }
 
-        if (matchingMovies.isEmpty()) {
-            return "No movies matching your request..";
-        }
-
-        String result = "";
-
-        for (Movie movie : matchingMovies) {
-            result += "Title: " + movie.getTitle() + "\n";
-            result += "Director: " + movie.getDirector() + "\n";
-            result += "Year: " + movie.getYearCreated() + "\n";
-            result += "In color: " + (movie.getIsInColor() ? "Yes" : "No") + "\n";
-            result += "Length: " + movie.getLengthInMinutes() + " minutes\n";
-            result += "Genre: " + movie.getGenre() + "\n\n";
-        }
-
-        return result;
+        return foundAny ? result : "No movies matching your request..";
     }
+
+
 
     @Override
     public String toString() {
