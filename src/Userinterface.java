@@ -26,7 +26,8 @@ public class Userinterface {
                     "1. for entering a film to the collection\n" +
                     "2. for viewing of movie collection\n" +
                     "3. for searching movie\n" +
-                    "4. for exiting");
+                    "4. for editing a movie\n" +
+                    "5. for exiting");
             addingmovies = input.nextInt();
             switch (addingmovies) {
                 case 1:
@@ -73,30 +74,69 @@ public class Userinterface {
                         break;
                     }
 
-                    System.out.println("movie information:");
+                    System.out.println("Current movie information:");
                     System.out.println(movieToEdit);
 
-                    System.out.println("new info:");
+                    boolean editingMovie = true;
+                    while (editingMovie) {
+                        System.out.println("\nWhat would you like to edit?");
+                        System.out.println("1. Title");
+                        System.out.println("2. Director");
+                        System.out.println("3. Year");
+                        System.out.println("4. Color Status");
+                        System.out.println("5. Length");
+                        System.out.println("6. Genre");
+                        System.out.println("7. Done editing");
 
-                    System.out.println("Title:");
-                    String newTitle = input.nextLine();
-                    System.out.println("Director:");
-                    String newDirector = input.nextLine();
-                    System.out.println("Year Created:");
-                    int newYear = input.nextInt();
-                    System.out.println("Is in color:");
-                    boolean newColor = input.nextBoolean();
-                    System.out.println("Length:");
-                    double newLength = input.nextDouble();
-                    System.out.println("Genre:");
-                    String newGenre = input.nextLine();
+                        int editChoice = input.nextInt();
+                        input.nextLine();
 
+                        switch (editChoice) {
+                            case 1:
+                                System.out.println("Enter new title:");
+                                String newTitle = input.nextLine();
+                                movieToEdit.setTitle(newTitle);
+                                break;
+                            case 2:
+                                System.out.println("Enter new director:");
+                                String newDirector = input.nextLine();
+                                movieToEdit.setDirector(newDirector);
+                                break;
+                            case 3:
+                                System.out.println("Enter new year:");
+                                int newYear = input.nextInt();
+                                movieToEdit.setYearCreated(newYear);
+                                break;
+                            case 4:
+                                System.out.println("Is the movie in color? (true/false):");
+                                boolean newColor = input.nextBoolean();
+                                movieToEdit.setIsInColor(newColor);
+                                break;
+                            case 5:
+                                System.out.println("Enter new length (in minutes):");
+                                double newLength = input.nextDouble();
+                                movieToEdit.setLengthInMinutes(newLength);
+                                break;
+                            case 6:
+                                System.out.println("Enter new genre:");
+                                String newGenre = input.nextLine();
+                                movieToEdit.setGenre(newGenre);
+                                break;
+                            case 7:
+                                editingMovie = false;
+                                break;
+                            default:
+                                System.out.println("Invalid option");
+                        }
 
-                    controller.editMovie(movieToEdit, newTitle, newDirector, newYear, newColor, newLength, newGenre);
-
-                    System.out.println("updated movie info:");
-                    System.out.println(movieToEdit);
+                        if (editingMovie) {
+                            System.out.println("\nUpdated movie information:");
+                            System.out.println(movieToEdit);
+                        }
+                    }
                     break;
+                case 5:
+
                 default:
             }
         }
