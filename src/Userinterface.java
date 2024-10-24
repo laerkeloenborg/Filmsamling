@@ -21,12 +21,13 @@ public class Userinterface {
 
         System.out.println("welcome to my movie collection!");
         int addingmovies = -1;
-        while (addingmovies != 5) {
+        while (addingmovies != 6) {
             System.out.println("\npress:\n" +
                     "1. for entering a film to the collection\n" +
                     "2. for viewing of movie collection\n" +
                     "3. for searching movie\n" +
-                    "4. for exiting");
+                    "4. for editing information about a movie\n" +
+                    "5. for exiting");
             addingmovies = input.nextInt();
             switch (addingmovies) {
                 case 1:
@@ -63,6 +64,33 @@ public class Userinterface {
                     System.out.println(searchResult);
                     break;
                 case 4:
+                    System.out.println("enter the movie you would like to edit");
+                    String searchToEdit = input.next();
+                    String searchToEditResult = controller.searchMovies(searchToEdit);
+                    System.out.println(searchToEditResult);
+                    System.out.println("now what do you want to edit in this movie?");
+                    switch (input.nextLine()){
+                        case "title":
+
+                            break;
+                        case "director":
+
+                            break;
+                        case "year":
+
+                            break;
+                        case "in color":
+
+                            break;
+                        case "length":
+
+                            break;
+                        case "genre":
+
+                            break;
+                    }
+                    break;
+                case 5:
                     System.out.println("you are now exiting the movie collection");
                     break;
                 default:
