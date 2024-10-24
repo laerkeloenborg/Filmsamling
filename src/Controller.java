@@ -24,9 +24,10 @@ public class Controller {
       return movieCollection.findMovie(title);
    }
 
-   public void editMovie(Movie movie, String title, String director, int yearCreated, boolean isInColor, double lengthInMinutes, String genre ) {
-      movieCollection.editMovie(movie, title, director, yearCreated, isInColor, lengthInMinutes, genre);
+   public void editMovie(Movie movie, int choice, String newValue) {
+      movieCollection.editMovie(movie, choice, newValue);
    }
+
 
 
 

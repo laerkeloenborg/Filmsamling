@@ -49,17 +49,31 @@ public class MovieCollection {
     }
 
 
-    public void editMovie(Movie movie, String title, String director, int yearCreated, boolean isInColor, double lengthInMinutes, String genre) {
-
-
-        movie.setTitle(title);
-        movie.setDirector(director);
-        movie.setYearCreated(yearCreated);
-        movie.setIsInColor(isInColor);
-        movie.setLengthInMinutes(lengthInMinutes);
-        movie.setGenre(genre);
-
+    public void editMovie(Movie movie, int choice, String newValue) {
+        switch (choice) {
+            case 1:
+                movie.setTitle(newValue);
+                break;
+            case 2:
+                movie.setDirector(newValue);
+                break;
+            case 3:
+                movie.setYearCreated(Integer.parseInt(newValue));
+                break;
+            case 4:
+                movie.setIsInColor(Boolean.parseBoolean(newValue));
+                break;
+            case 5:
+                movie.setLengthInMinutes(Double.parseDouble(newValue));
+                break;
+            case 6:
+                movie.setGenre(newValue);
+                break;
+            default:
+                System.out.println("Invalid choice");
+        }
     }
+
 
 
 
