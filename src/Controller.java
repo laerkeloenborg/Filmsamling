@@ -57,6 +57,7 @@ public class Controller {
                     String searchTitle = input.next();
                     String searchResult = movieCollection1.searchMovies(searchTitle);
                     System.out.println(searchResult);
+                    break;
                 case 4:
                     System.out.println("you are now exiting the movie collection");
                     break;
