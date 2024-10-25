@@ -10,9 +10,9 @@ class MovieCollectionTest {
     @Test
     void getMovieCollection() {
         //Arrange
-        Movie movie = new Movie("ja", "nej", 2024, true, 110,"drama");
-        Movie movie2 = new Movie("nej", "ja", 2020, false, 1000, "action");
-        Movie movie3 = new Movie("måske", "bob", 2930, true, 192, "yesyes");
+        Movie movie = new Movie("Spiderman", "Dorte", 2024, true, 110,"action");
+        Movie movie2 = new Movie("The holiday", "Tom", 2020, false, 1000, "RomCom");
+        Movie movie3 = new Movie("it", "bob", 2930, true, 192, "horror");
         MovieCollection movieCollection = new MovieCollection();
 
         movieCollection.addMovie(movie);
@@ -35,17 +35,17 @@ class MovieCollectionTest {
     @Test
     void addMovie() {
         //Arrange
-        Movie movie = new Movie("ja", "nej", 2024, true, 110,"drama");
+        Movie movie = new Movie("løvernes konge", "disney", 2024, true, 110,"animation");
         MovieCollection movieCollection = new MovieCollection();
 
         movieCollection.addMovie(movie);
 
         //Act
-        movieCollection.searchMovies("ja");
+        movieCollection.searchMovies("løvernes konge");
         String actualResult = movie.getTitle();
 
         //Assert
-        String expectedResult = "ja";
+        String expectedResult = "løvernes konge";
         assertEquals(expectedResult,actualResult);
 
     }
