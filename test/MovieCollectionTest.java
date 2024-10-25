@@ -10,9 +10,6 @@ class MovieCollectionTest {
 
     @Test
     void setMovieCollection() {
-
-
-
     }
 
     @Test
