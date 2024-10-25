@@ -1,7 +1,10 @@
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class MovieCollection {
     private ArrayList<Movie> movieCollection = new ArrayList<>();
+
+    Scanner scanner = new Scanner(System.in);
 
     public MovieCollection() {
         this.movieCollection = movieCollection;
@@ -75,7 +78,7 @@ public class MovieCollection {
         }
     }
 
-
+  
 
 
 

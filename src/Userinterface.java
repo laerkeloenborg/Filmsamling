@@ -21,7 +21,7 @@ public class Userinterface {
 
         System.out.println("welcome to my movie collection!");
         int addingmovies = -1;
-        while (addingmovies != 5) {
+        while (addingmovies != 6) {
             System.out.println("\npress:\n" +
                     "1. for entering a film to the collection\n" +
                     "2. for viewing of movie collection\n" +
