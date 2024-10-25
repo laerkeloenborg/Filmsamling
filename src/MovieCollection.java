@@ -78,6 +78,9 @@ public class MovieCollection {
         }
     }
 
+    public int getNumberOfMovies(){
+        return movieCollection.size();
+    }
   
 
 
