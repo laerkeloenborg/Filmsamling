@@ -1,13 +1,12 @@
 import java.util.ArrayList;
-import java.util.Scanner;
+
 
 public class MovieCollection {
     private ArrayList<Movie> movieCollection = new ArrayList<>();
 
-    Scanner scanner = new Scanner(System.in);
+
 
     public MovieCollection() {
-        this.movieCollection = movieCollection;
     }
 
     public ArrayList<Movie> getMovieCollection() {
@@ -42,7 +41,7 @@ public class MovieCollection {
     }
 
 
-    public Movie findMovie(String title) {
+    public Movie findMovieToEdit(String title) {
         for (Movie movie : movieCollection) {
             if (movie.getTitle().toLowerCase().contains(title.toLowerCase())) {
                 return movie;
@@ -68,7 +67,7 @@ public class MovieCollection {
                 movie.setIsInColor(isInColor);
                 break;
             case 5:
-                movie.setLengthInMinutes(Double.parseDouble(newValue));
+                movie.setLengthInMinutes(Integer.parseInt(newValue));
                 break;
             case 6:
                 movie.setGenre(newValue);
@@ -82,7 +81,6 @@ public class MovieCollection {
         return movieCollection.size();
     }
   
-
 
 
 

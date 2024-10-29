@@ -1,5 +1,3 @@
-import java.util.Scanner;
-
 public class Controller {
    private Movie movie;
    private MovieCollection movieCollection;
@@ -20,8 +18,8 @@ public class Controller {
       return movieCollection;
    }
 
-   public Movie findMovie(String title) {
-      return movieCollection.findMovie(title);
+   public Movie findMovieToEdit(String title) {
+      return movieCollection.findMovieToEdit(title);
    }
 
    public void editMovie(Movie movie, int choice, String newValue) {
