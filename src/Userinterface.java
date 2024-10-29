@@ -1,3 +1,4 @@
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Userinterface {
@@ -28,7 +29,13 @@ public class Userinterface {
                     "3. for searching movie\n" +
                     "4. for editing a movie\n" +
                     "5. for exiting");
-            addingMovies = input.nextInt();
+            while (addingMovies == -1){
+            try {addingMovies = input.nextInt();
+            }
+            catch (InputMismatchException e) {
+                System.out.println("You need to enter an value from 1-5");
+                input.next();
+            } }
             switch (addingMovies) {
                 case 1:
                     System.out.println("enter a movie to your collection\n" + "start with a title:");

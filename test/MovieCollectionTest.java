@@ -61,7 +61,6 @@ class MovieCollectionTest {
         //Assert
         int expectedResult = 0;
         assertEquals(expectedResult,actualSize);
-
     }
 
     @Disabled
