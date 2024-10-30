@@ -51,6 +51,8 @@ public class MovieCollection {
     }
 
 
+
+
     public void editMovie(Movie movie, int choice, String newValue) {
         switch (choice) {
             case 1:

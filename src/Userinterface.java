@@ -1,3 +1,6 @@
+import com.sun.jdi.IntegerType;
+
+import javax.print.attribute.IntegerSyntax;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -30,9 +33,9 @@ public class Userinterface {
                     "4. for editing a movie\n" +
                     "5. for exiting");
 
-            try {addingMovies = input.nextInt();
-            }
-            catch (InputMismatchException e) {
+            try {
+                addingMovies = input.nextInt();
+            } catch (InputMismatchException e) {
                 System.out.println("You need to enter a value from 1-5");
                 input.next();
             }
@@ -43,27 +46,58 @@ public class Userinterface {
                     String addTitle = input.nextLine();
 
                     System.out.println("now the director:");
-                    String addDirector = input.nextLine();
+                    String addDirector;
+                    addDirector = "";
+                    boolean validInput = false;
+                    while (!validInput) {
+                        addDirector = input.nextLine();
+                        validInput = true;
+                        for (int i = 0; i < addDirector.length(); i++)
+                            if (Character.isDigit(addDirector.charAt(i))) {
+                                System.out.println("you have to enter a real name, not numbers");
+                                validInput = false;
+                                break;
+                            }
+                    }
 
                     System.out.println("add the year it was created:");
                     int addYearCreated = input.nextInt();
 
                     System.out.println("is the movie in color?");
-                    String addIsInColor1 = input.next();
+                    String addIsInColor1;
                     boolean addIsInColor;
-                    if (addIsInColor1.equalsIgnoreCase("yes")) {
-                        addIsInColor = true;
-                    } else {
-                        addIsInColor = false;
+                    while (true) {
+                        addIsInColor1 = input.next();
+                        if (addIsInColor1.equalsIgnoreCase("yes")) {
+                            addIsInColor = true;
+                            break;
+                        } else if (addIsInColor1.equalsIgnoreCase("no")) {
+                            addIsInColor = false;
+                            break;
+                        } else {
+                            System.out.println("invalid input, try again");
+                        }
                     }
 
                     System.out.println("how long is the movie in minutes?:");
-                    int addLenghtInMinutes = input.nextInt();
+                    int addLengthInMinutes = input.nextInt();
 
                     System.out.println("now which genre is it?:");
-                    String addGenre = input.next();
+                    String addGenre;
+                    addGenre = " ";
+                    boolean validInput1 = false;
+                    while (!validInput1) {
+                        addGenre = input.next();
+                        validInput1 = true;
+                        for (int i = 0; i < addGenre.length(); i++)
+                            if (Character.isDigit(addGenre.charAt(i))) {
+                                System.out.println("you have to enter a Genre, not numbers!");
+                                validInput1 = false;
+                                break;
+                            }
+                    }
 
-                    Movie movie1 = new Movie(addTitle, addDirector, addYearCreated, addIsInColor, addLenghtInMinutes, addGenre);
+                    Movie movie1 = new Movie(addTitle, addDirector, addYearCreated, addIsInColor, addLengthInMinutes, addGenre);
                     controller.addMovie(movie1);
                     System.out.println(movie1);
                     break;
