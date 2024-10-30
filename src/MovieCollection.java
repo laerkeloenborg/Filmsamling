@@ -82,9 +82,15 @@ public class MovieCollection {
     public int getNumberOfMovies(){
         return movieCollection.size();
     }
-  
 
-
+    public Movie deleteMovie(String title) {
+        Movie movieToDelete = findMovieToEdit(title);
+        if (movieToDelete != null) {
+            movieCollection.remove(movieToDelete);
+            return movieToDelete;
+        }
+        return null;
+    }
 
 
     @Override

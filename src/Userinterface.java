@@ -25,13 +25,14 @@ public class Userinterface {
 
         System.out.println("welcome to your movie collection!");
         int addingMovies = -1;
-        while (addingMovies != 5) {
+        while (addingMovies != 6) {
             System.out.println("\npress:\n" +
                     "1. for entering a film to the collection\n" +
                     "2. for viewing of movie collection\n" +
                     "3. for searching movie\n" +
                     "4. for editing a movie\n" +
-                    "5. for exiting");
+                    "5. for deleting a movie\n" +
+                    "6. for exiting");
 
             try {
                 addingMovies = input.nextInt();
@@ -61,7 +62,22 @@ public class Userinterface {
                     }
 
                     System.out.println("add the year it was created:");
-                    int addYearCreated = input.nextInt();
+                    int addYearCreated = 0;
+                    boolean validInput2 = false;
+                    while (!validInput2) {
+                        try {
+                            addYearCreated = input.nextInt();
+                            if (addYearCreated >= 1000 & addYearCreated <= 9999) {
+                                validInput2 = true;
+                            } else {
+                                System.out.println("The year must be exactly 4 digits");
+                            }
+                        } catch (InputMismatchException exception) {
+                            System.out.println("You need to type in numbers: " + exception.getMessage());
+                            exception.printStackTrace();
+                            input.next();
+                        }
+                    }
 
                     System.out.println("is the movie in color?");
                     String addIsInColor1;
@@ -157,6 +173,18 @@ public class Userinterface {
 
                     break;
                 case 5:
+                    System.out.println("Enter the title of the movie you want to delete:");
+                    input.nextLine();
+                    String titleToDelete = input.nextLine();
+                    Movie deletedMovie = controller.deleteMovie(titleToDelete);
+                    if (deletedMovie != null) {
+                        System.out.println(deletedMovie.getTitle() + " has been deleted");
+
+                    } else {
+                        System.out.println("the movie " + titleToDelete + " is not found");
+                    }
+                    break;
+                case 6:
                     System.out.println("you are now exiting your movie collection");
                     break;
 

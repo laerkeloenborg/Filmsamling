@@ -26,6 +26,14 @@ public class Controller {
       movieCollection.editMovie(movie, choice, newValue);
    }
 
+   public Movie deleteMovie(String title) {
+      return movieCollection.deleteMovie(title);
+   }
+
+
+
+
+
 
 
 

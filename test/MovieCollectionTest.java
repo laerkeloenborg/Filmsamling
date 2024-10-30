@@ -85,6 +85,29 @@ class MovieCollectionTest {
 
     }
 
+    @DisplayName("Test deleting a movie")
+    @Test
+    void deleteMovie() {
+        //Arrange
+        Movie movie1 = new Movie("spiderman", "Jon", 2024, true, 120, "action");
+        Movie movie2 = new Movie("jagten", "vinterberg", 2013, true, 120, "drama");
+        MovieCollection movieCollection = new MovieCollection();
+
+        movieCollection.addMovie(movie1);
+        movieCollection.addMovie(movie2);
+
+        //Act
+        movieCollection.deleteMovie("spiderman");
+        int actualSize = movieCollection.getNumberOfMovies();
+
+        //Assert
+        int expectedSize = 1;
+        assertEquals(expectedSize, actualSize);
+    }
+
+
+
+
     @Disabled
     void searchMovies() {
     }
