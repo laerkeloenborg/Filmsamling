@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class Controller {
    private Movie movie;
    private MovieCollection movieCollection;
@@ -30,6 +32,13 @@ public class Controller {
       return movieCollection.deleteMovie(title);
    }
 
+   public ArrayList<Movie> savingMovies(){
+      return movieCollection.saveListOfMovies();
+   }
+
+   public ArrayList<Movie> load(){
+      return movieCollection.loadListOfMovies();
+   }
 
 
 

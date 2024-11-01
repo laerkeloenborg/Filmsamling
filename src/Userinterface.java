@@ -1,6 +1,5 @@
-import com.sun.jdi.IntegerType;
 
-import javax.print.attribute.IntegerSyntax;
+import java.io.PrintStream;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -13,31 +12,36 @@ public class Userinterface {
     Movie howtoloose = new Movie("How to Lose a Guy in 10 Days", "Donald Petrie", 2003, true, 148, "RomCom");
     Movie thedarkknight = new Movie("the dark knight", "Christopher Nolan", 2008, true, 152, "Action");
 
+
     public Userinterface() {
         controller = new Controller();
     }
 
-    public void startCollection() {
+    public void startCollection(PrintStream out) {
         controller.addMovie(spidermanhome);
         controller.addMovie(spidermannoway);
         controller.addMovie(howtoloose);
         controller.addMovie(thedarkknight);
 
+
+
         System.out.println("welcome to your movie collection!");
         int addingMovies = -1;
-        while (addingMovies != 6) {
+        while (addingMovies != 7) {
             System.out.println("\npress:\n" +
                     "1. for entering a film to the collection\n" +
                     "2. for viewing of movie collection\n" +
                     "3. for searching movie\n" +
                     "4. for editing a movie\n" +
-                    "5. for deleting a movie\n" +
-                    "6. for exiting");
+                    "5. for saving the movie to the collection\n" +
+                    "6. for deleting a movie\n" +
+                    "7. for exiting");
 
             try {
                 addingMovies = input.nextInt();
             } catch (InputMismatchException e) {
-                System.out.println("You need to enter a value from 1-5");
+                PrintStream out1 = System.out;
+                out.println("You need to enter a value from 1-5");
                 input.next();
             }
             switch (addingMovies) {
@@ -118,7 +122,7 @@ public class Userinterface {
                     System.out.println(movie1);
                     break;
                 case 2:
-                    System.out.println(controller.getMovieCollection());
+                    System.out.println(controller.load());
                     break;
                 case 3:
                     System.out.println("Enter the title of your movie");
@@ -173,6 +177,10 @@ public class Userinterface {
 
                     break;
                 case 5:
+                    controller.savingMovies();
+                    System.out.println("movie is now added to your collection");
+                    break;
+                case 6:
                     System.out.println("Enter the title of the movie you want to delete:");
                     input.nextLine();
                     String titleToDelete = input.nextLine();
@@ -184,7 +192,7 @@ public class Userinterface {
                         System.out.println("the movie " + titleToDelete + " is not found");
                     }
                     break;
-                case 6:
+                case 7:
                     System.out.println("you are now exiting your movie collection");
                     break;
 
