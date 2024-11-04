@@ -65,12 +65,12 @@ public class Movie {
 
     @Override
     public String toString(){
-        return  "\n\nTitle: " + this.title +
+        return  "\nTitle: " + this.title +
                 "\nDirector: " + this.director  +
                 "\nYear: " + this.yearCreated +
                 "\nIn color: " + (this.isInColor ? "Yes" : "No") +
                 "\nLength: " + this.lengthInMinutes  +
-                "\nGenre: " + this.genre;
+                "\nGenre: " + this.genre + "\n";
     }
 
     public String toStringFile() {
@@ -89,13 +89,4 @@ public class Movie {
 
 
 
-    /*
-     return this.title + ";" +
-                this.director  + ";" +
-                this.yearCreated + ";" +
-                (this.isInColor ? "Yes" : "No") + ";" +
-                this.lengthInMinutes  + ";" +
-                this.genre;
-
-     */
 }

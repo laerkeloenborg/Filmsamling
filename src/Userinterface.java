@@ -42,7 +42,6 @@ public class Userinterface {
             try {
                 addingMovies = input.nextInt();
             } catch (InputMismatchException e) {
-                PrintStream out1 = System.out;
                 System.out.println("You need to enter a value from 1-5");
                 input.next();
             }
