@@ -30,15 +30,14 @@ public class Userinterface {
 
         System.out.println("welcome to your movie collection!");
         int addingMovies = -1;
-        while (addingMovies != 7) {
+        while (addingMovies != 6) {
             System.out.println("\npress:\n" +
                     "1. for entering a film to the collection\n" +
                     "2. for viewing of movie collection\n" +
                     "3. for searching movie\n" +
                     "4. for editing a movie\n" +
-                    "5. for saving the movie to the collection\n" +
-                    "6. for deleting a movie\n" +
-                    "7. for exiting");
+                    "5. for deleting a movie\n" +
+                    "6. for exiting");
 
             try {
                 addingMovies = input.nextInt();
@@ -123,6 +122,7 @@ public class Userinterface {
                     Movie movie1 = new Movie(addTitle, addDirector, addYearCreated, addIsInColor, addLengthInMinutes, addGenre);
                     controller.addMovie(movie1);
                     System.out.println(movie1);
+                    controller.savingMovies();
                     break;
                 case 2:
                     System.out.println(controller.load());
@@ -177,13 +177,9 @@ public class Userinterface {
                             System.out.println("Invalid option");
                         }
                     }
-
+                    controller.savingMovies();
                     break;
                 case 5:
-                    controller.savingMovies();
-                    System.out.println("movie is now added to your collection");
-                    break;
-                case 6:
                     System.out.println("Enter the title of the movie you want to delete:");
                     input.nextLine();
                     String titleToDelete = input.nextLine();
@@ -194,8 +190,9 @@ public class Userinterface {
                     } else {
                         System.out.println("the movie " + titleToDelete + " is not found");
                     }
+                    controller.savingMovies();
                     break;
-                case 7:
+                case 6:
                     System.out.println("you are now exiting your movie collection");
                     break;
 
