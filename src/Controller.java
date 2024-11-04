@@ -33,11 +33,11 @@ public class Controller {
    }
 
    public ArrayList<Movie> savingMovies(){
-      return movieCollection.saveListOfMovies();
+      return movieCollection.save();
    }
 
    public ArrayList<Movie> load(){
-      return movieCollection.loadListOfMovies();
+      return movieCollection.load();
    }
 
 
