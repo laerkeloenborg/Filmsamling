@@ -1,26 +1,17 @@
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.io.PrintStream;
-import java.nio.charset.StandardCharsets;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.Scanner;
 
 
 public class MovieCollection {
-    private ArrayList<Movie> movieCollection = new ArrayList<>();
+    private ArrayList<Movie> movieCollection;
+
 
 
     public MovieCollection() {
+        movieCollection = loadListOfMovies();
     }
 
-    public ArrayList<Movie> getMovieCollection() {
-        return movieCollection;
-    }
-
-    public void setMovieCollection(ArrayList<Movie> movieCollection) {
-        this.movieCollection = movieCollection;
-    }
 
     public void addMovie(Movie movie) {
         movieCollection.add(movie);
@@ -56,7 +47,7 @@ public class MovieCollection {
     }
 
 
-    public void editMovie(Movie movie, int choice, String newValue) {
+    public String editMovie(Movie movie, int choice, String newValue) {
         switch (choice) {
             case 1:
                 movie.setTitle(newValue);
@@ -78,9 +69,11 @@ public class MovieCollection {
                 movie.setGenre(newValue);
                 break;
             default:
-                System.out.println("Invalid choice");
+                return "Invalid choice";
         }
+        return " ";
     }
+
 
     public int getNumberOfMovies() {
         return movieCollection.size();
@@ -94,6 +87,7 @@ public class MovieCollection {
         }
         return null;
     }
+
 
     public ArrayList<Movie> saveListOfMovies() {
         PrintStream output = null;
@@ -135,6 +129,7 @@ public class MovieCollection {
     }
 
 
+
     @Override
     public String toString() {
         int counter = 0;
@@ -145,5 +140,7 @@ public class MovieCollection {
         }
         return empty;
     }
+
+
 }
 
