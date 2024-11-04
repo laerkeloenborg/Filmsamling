@@ -6,6 +6,7 @@ import java.util.Scanner;
 
 public class FileHandler {
 
+
     public ArrayList<Movie> saveListOfMovies(ArrayList<Movie> movieCollection) {
         PrintStream output = null;
         try {
@@ -14,7 +15,7 @@ public class FileHandler {
             throw new RuntimeException(e);
         }
         for (Movie movie : movieCollection) {
-            output.println(movie);
+            output.println(movie.toStringFile());
         }
         return movieCollection;
     }
@@ -44,4 +45,6 @@ public class FileHandler {
         scanner.close();
         return movieCollection;
     }
+
+
 }

@@ -64,12 +64,38 @@ public class Movie {
     }
 
     @Override
-    public String toString() {
-        return this.title + ";" +
+    public String toString(){
+        return  "\n\nTitle: " + this.title +
+                "\nDirector: " + this.director  +
+                "\nYear: " + this.yearCreated +
+                "\nIn color: " + (this.isInColor ? "Yes" : "No") +
+                "\nLength: " + this.lengthInMinutes  +
+                "\nGenre: " + this.genre;
+    }
+
+    public String toStringFile() {
+        return  this.title + ";" +
                 this.director  + ";" +
                 this.yearCreated + ";" +
                 (this.isInColor ? "Yes" : "No") + ";" +
                 this.lengthInMinutes  + ";" +
                 this.genre;
     }
+
+
+
+
+
+
+
+
+    /*
+     return this.title + ";" +
+                this.director  + ";" +
+                this.yearCreated + ";" +
+                (this.isInColor ? "Yes" : "No") + ";" +
+                this.lengthInMinutes  + ";" +
+                this.genre;
+
+     */
 }
