@@ -81,21 +81,4 @@ public class Movie {
                 this.lengthInMinutes  + ";" +
                 this.genre;
     }
-
-
-
-
-
-
-
-
-    /*
-     return this.title + ";" +
-                this.director  + ";" +
-                this.yearCreated + ";" +
-                (this.isInColor ? "Yes" : "No") + ";" +
-                this.lengthInMinutes  + ";" +
-                this.genre;
-
-     */
 }

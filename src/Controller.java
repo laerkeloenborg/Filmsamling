@@ -1,7 +1,6 @@
 import java.util.ArrayList;
 
 public class Controller {
-   private Movie movie;
    private MovieCollection movieCollection;
 
    public Controller(){
@@ -14,10 +13,6 @@ public class Controller {
 
    public String searchMovies (String title){
       return movieCollection.searchMovies(title);
-   }
-
-   public MovieCollection getMovieCollection(){
-      return movieCollection;
    }
 
    public Movie findMovieToEdit(String title) {

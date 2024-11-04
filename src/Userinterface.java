@@ -1,5 +1,3 @@
-
-import java.io.PrintStream;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -7,27 +5,11 @@ public class Userinterface {
     private Controller controller;
     private Scanner input = new Scanner(System.in);
 
-//    Movie spidermanhome = new Movie("spiderman homecoming", "Jon Watts", 2017, true, 133, "Action");
-//    Movie spidermannoway = new Movie("spiderman no way home", "Jon Watts", 2021, true, 148, "Action");
-//    Movie howtoloose = new Movie("How to Lose a Guy in 10 Days", "Donald Petrie", 2003, true, 148, "RomCom");
-//    Movie thedarkknight = new Movie("the dark knight", "Christopher Nolan", 2008, true, 152, "Action");
-
-
-
     public Userinterface() {
         controller = new Controller();
     }
 
     public void startCollection() {
-//        controller.addMovie(spidermanhome);
-//        controller.addMovie(spidermannoway);
-//        controller.addMovie(howtoloose);
-//        controller.addMovie(thedarkknight);
-
-
-
-
-
         System.out.println("welcome to your movie collection!");
         int addingMovies = -1;
         while (addingMovies != 6) {
@@ -42,7 +24,6 @@ public class Userinterface {
             try {
                 addingMovies = input.nextInt();
             } catch (InputMismatchException e) {
-                PrintStream out1 = System.out;
                 System.out.println("You need to enter a value from 1-5");
                 input.next();
             }

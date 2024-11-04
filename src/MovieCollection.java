@@ -1,12 +1,9 @@
-import java.io.*;
-import java.security.PublicKey;
 import java.util.ArrayList;
-import java.util.Scanner;
 
 
 public class MovieCollection {
     private ArrayList<Movie> movieCollection;
-    FileHandler fileHandler;
+    private FileHandler fileHandler;
 
 
     public MovieCollection() {
@@ -97,49 +94,6 @@ public class MovieCollection {
     public ArrayList<Movie> load(){
         return fileHandler.loadListOfMovies();
     }
-
-
-
-//    public ArrayList<Movie> saveListOfMovies() {
-//        PrintStream output = null;
-//        try {
-//            output = new PrintStream(new File("movieCollection.txt"));
-//        } catch (FileNotFoundException e) {
-//            throw new RuntimeException(e);
-//        }
-//        for (Movie movie : movieCollection) {
-//            output.println(movie);
-//        }
-//        return movieCollection;
-//    }
-//
-//    public ArrayList<Movie> loadListOfMovies() {
-//        ArrayList<Movie> movieCollection = new ArrayList<>();
-//        Scanner scanner = null;
-//        File file = new File("movieCollection.txt");
-//        try {
-//            scanner = new Scanner(file);
-//        } catch (FileNotFoundException e) {
-//            throw new RuntimeException(e);
-//        }
-//        Movie movie = null;
-//        while (scanner.hasNext()) {
-//            String line = scanner.nextLine();
-//            String[] attributes = line.split(";");
-//            movie = new Movie(attributes[0],
-//                    attributes[1],
-//                    Integer.parseInt(attributes[2]),
-//                    Boolean.parseBoolean(attributes[3]),
-//                    Integer.parseInt(attributes[4]),
-//                    attributes[5]);
-//
-//            movieCollection.add(movie);
-//        }
-//        scanner.close();
-//        return movieCollection;
-//    }
-
-
 
     @Override
     public String toString() {
