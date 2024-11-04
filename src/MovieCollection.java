@@ -10,6 +10,7 @@ public class MovieCollection {
 
 
     public MovieCollection() {
+        this.fileHandler = new FileHandler();
         movieCollection = fileHandler.loadListOfMovies();
     }
 
