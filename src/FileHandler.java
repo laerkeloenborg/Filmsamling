@@ -2,6 +2,8 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintStream;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.Scanner;
 
 public class FileHandler {
@@ -42,6 +44,8 @@ public class FileHandler {
 
             movieCollection.add(movie);
         }
+
+        Collections.sort(movieCollection,new Comparator1());
         scanner.close();
         return movieCollection;
     }
