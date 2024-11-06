@@ -107,7 +107,32 @@ public class Userinterface {
                     controller.savingMovies();
                     break;
                 case 2:
-                    System.out.println(controller.load());
+                    boolean sortMovieList = true;
+                    while(sortMovieList) {
+                        System.out.println("\nHow would you like to sort the movie list: ");
+                        System.out.println("1. Title");
+                        System.out.println("2. Director");
+                        System.out.println("3. Year");
+                        System.out.println("4. Color Status");
+                        System.out.println("5. Length");
+                        System.out.println("6. Genre");
+                        System.out.println("7. Done editing");
+
+                        int sortChoice = input.nextInt();
+                        input.nextLine();
+
+                        if (sortChoice ==7){
+                            sortMovieList = false;
+                        }
+
+                        if(sortChoice >= 1 && sortChoice <= 6) {
+                            System.out.println("\nUpdated movie list:");
+                            System.out.println(controller.load());
+                        } else {
+                            System.out.println("Invalid option");
+                        }
+
+                    }
                     break;
                 case 3:
                     System.out.println("Enter the title of your movie");
