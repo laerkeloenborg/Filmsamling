@@ -1,5 +1,4 @@
-package ui;
-import domainmodel.Userinterface;
+import ui.Userinterface;
 
 import java.io.FileNotFoundException;
 

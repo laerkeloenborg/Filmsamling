@@ -1,4 +1,6 @@
-package domainmodel;
+package ui;
+
+import domainmodel.*;
 
 import java.util.*;
 
