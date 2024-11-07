@@ -85,7 +85,7 @@ public class MovieCollection {
         return " ";
     }
 
-
+    //Denne metode bruges kun til test
     public int getNumberOfMovies() {
         return movieCollection.size();
     }
