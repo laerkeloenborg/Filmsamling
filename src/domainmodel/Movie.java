@@ -79,8 +79,9 @@ public class Movie {
         return  this.title + ";" +
                 this.director  + ";" +
                 this.yearCreated + ";" +
-                (this.isInColor ? "Yes" : "No") + ";" +
+                (this.isInColor ? "true" : "false") + ";" +
                 this.lengthInMinutes  + ";" +
                 this.genre;
+
     }
 }
