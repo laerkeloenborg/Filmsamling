@@ -11,6 +11,9 @@ public class MovieCollection {
         movieCollection = fileHandler.loadListOfMovies();
     }
 
+    public ArrayList<Movie> getMovieCollection(){
+        return movieCollection;
+    }
 
     public void addMovie(Movie movie) {
         movieCollection.add(movie);

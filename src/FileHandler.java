@@ -45,7 +45,7 @@ public class FileHandler {
             movieCollection.add(movie);
         }
 
-        Collections.sort(movieCollection,new Comparator1());
+        //Collections.sort(movieCollection,new ComparatorTitle());
         scanner.close();
         return movieCollection;
     }

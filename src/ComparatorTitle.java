@@ -1,6 +1,6 @@
 import java.util.Comparator;
 
-public class Comparator1 implements Comparator<Movie> {
+public class ComparatorTitle implements Comparator<Movie> {
     public int compare(Movie a, Movie b){
 
         String[] arrOfA = a.getTitle().split(" ");
@@ -13,8 +13,4 @@ public class Comparator1 implements Comparator<Movie> {
         }
 
     }
-
 }
-
-//int result = a.getTitle().compareToIgnoreCase(b.getTitle());
-//        return result != 0 ? result : Integer.compare(a.getYearCreated(), b.getYearCreated());

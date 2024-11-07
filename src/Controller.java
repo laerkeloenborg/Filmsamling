@@ -35,6 +35,10 @@ public class Controller {
       return movieCollection.load();
    }
 
+   public ArrayList<Movie> getMovieCollection(){
+     return movieCollection.getMovieCollection();
+   }
+
 
 
 

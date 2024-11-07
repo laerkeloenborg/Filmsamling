@@ -1,6 +1,4 @@
-import java.util.Arrays;
-import java.util.InputMismatchException;
-import java.util.Scanner;
+import java.util.*;
 
 public class Userinterface {
     private Controller controller;
@@ -108,30 +106,81 @@ public class Userinterface {
                     break;
                 case 2:
                     boolean sortMovieList = true;
-                    while(sortMovieList) {
-                        System.out.println("\nHow would you like to sort the movie list: ");
+                    while (sortMovieList) {
+                        System.out.println("\nWhat is your primary attribute: ");
                         System.out.println("1. Title");
                         System.out.println("2. Director");
                         System.out.println("3. Year");
                         System.out.println("4. Color Status");
                         System.out.println("5. Length");
                         System.out.println("6. Genre");
-                        System.out.println("7. Done editing");
 
-                        int sortChoice = input.nextInt();
-                        input.nextLine();
 
-                        if (sortChoice ==7){
-                            sortMovieList = false;
+                        int primaryChoice = input.nextInt();
+
+                        Comparator<Movie> comparator = null;
+                        switch (primaryChoice) {
+                            case 1:
+                                comparator = new ComparatorTitle();
+                                break;
+                            case 2:
+                                comparator = new ComparatorDirector();
+                                break;
+                            case 3:
+                                comparator = new ComparatorYear();
+                                break;
+                            case 4:
+                                comparator = new ComparatorColor();
+                                break;
+                            case 5:
+                                comparator = new ComparatorLength();
+                                break;
+                            case 6:
+                                comparator = new ComparatorGenre();
+                                break;
+                            default:
+                                System.out.println("unvalid number");
                         }
 
-                        if(sortChoice >= 1 && sortChoice <= 6) {
-                            System.out.println("\nUpdated movie list:");
-                            System.out.println(controller.load());
-                        } else {
-                            System.out.println("Invalid option");
+                        System.out.println("\nWhat is your secondary attribute: ");
+                        System.out.println("1. Title");
+                        System.out.println("2. Director");
+                        System.out.println("3. Year");
+                        System.out.println("4. Color Status");
+                        System.out.println("5. Length");
+                        System.out.println("6. Genre");
+
+                        int secondaryChoice = input.nextInt();
+
+                        switch (secondaryChoice) {
+                            case 1:
+                                comparator = comparator.thenComparing(new ComparatorTitle());
+                                break;
+                            case 2:
+                                comparator = comparator.thenComparing(new ComparatorDirector());
+                                break;
+                            case 3:
+                                comparator = comparator.thenComparing(new ComparatorYear());
+                                break;
+                            case 4:
+                                comparator = comparator.thenComparing(new ComparatorColor());
+                                break;
+                            case 5:
+                                comparator = comparator.thenComparing(new ComparatorLength());
+                                break;
+                            case 6:
+                                comparator = comparator.thenComparing(new ComparatorGenre());
+                                break;
+                            default:
+                                System.out.println("Unvalid number");
                         }
 
+                        Collections.sort(controller.load(), comparator);
+                        System.out.println("The movielist is now sorted as you wanted.\n");
+                        for (Movie movie : controller.getMovieCollection()){
+                            System.out.println(movie);
+                        }
+                        break;
                     }
                     break;
                 case 3:
