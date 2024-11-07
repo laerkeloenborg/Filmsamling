@@ -12,7 +12,9 @@ public class Userinterface {
         controller = new Controller();
     }
 
+
     public void startCollection() {
+        // main menu loop - continues until user selects exit (6)
         System.out.println("welcome to your movie collection!");
         int addingMovies = -1;
         while (addingMovies != 6) {
@@ -36,6 +38,7 @@ public class Userinterface {
                     input.nextLine();
                     String addTitle = input.nextLine();
 
+                    // add the director name with validation (no numbers allowed)
                     System.out.println("now the director:");
                     String addDirector;
                     addDirector = "";
@@ -43,6 +46,7 @@ public class Userinterface {
                     while (!validInput) {
                         addDirector = input.nextLine();
                         validInput = true;
+                        // check each character in director name and make sure its characters, not numbers
                         for (int i = 0; i < addDirector.length(); i++)
                             if (Character.isDigit(addDirector.charAt(i))) {
                                 System.out.println("you have to enter a real name, not numbers");
@@ -51,12 +55,14 @@ public class Userinterface {
                             }
                     }
 
+                    // Add movie year with validation (must be 4 digits)
                     System.out.println("add the year it was created:");
                     int addYearCreated = 0;
                     boolean validInput2 = false;
                     while (!validInput2) {
                         try {
                             addYearCreated = input.nextInt();
+                            // the check to make sure year is 4 digits
                             if (addYearCreated >= 1000 & addYearCreated <= 9999) {
                                 validInput2 = true;
                             } else {
@@ -69,11 +75,13 @@ public class Userinterface {
                         }
                     }
 
+                    // Add movie color information (yes/no question)
                     System.out.println("is the movie in color?");
                     String addIsInColor1;
                     boolean addIsInColor;
                     while (true) {
                         addIsInColor1 = input.next();
+                        // Convert yes/no to boolean
                         if (addIsInColor1.equalsIgnoreCase("yes")) {
                             addIsInColor = true;
                             break;
@@ -88,6 +96,7 @@ public class Userinterface {
                     System.out.println("how long is the movie in minutes?:");
                     int addLengthInMinutes = input.nextInt();
 
+                    // Add genre with validation (no numbers allowed)
                     System.out.println("now which genre is it?:");
                     String addGenre;
                     addGenre = " ";
@@ -95,6 +104,7 @@ public class Userinterface {
                     while (!validInput1) {
                         addGenre = input.next();
                         validInput1 = true;
+                        // Check to make sure input is characters, not numbers
                         for (int i = 0; i < addGenre.length(); i++)
                             if (Character.isDigit(addGenre.charAt(i))) {
                                 System.out.println("you have to enter a Genre, not numbers!");
@@ -103,7 +113,10 @@ public class Userinterface {
                             }
                     }
 
+                    // Create a new Movie object with the added movie information
                     Movie movie1 = new Movie(addTitle, addDirector, addYearCreated, addIsInColor, addLengthInMinutes, addGenre);
+
+                    // Add movie information and save
                     controller.addMovie(movie1);
                     System.out.println(movie1);
                     controller.savingMovies();
@@ -179,7 +192,10 @@ public class Userinterface {
                                 System.out.println("Unvalid number");
                         }
 
+                        // Sort the movie collection using primary and secondary
                         Collections.sort(controller.getMovieCollection(), comparator);
+
+                        // Display the sorted movie list
                         System.out.println("The movielist is now sorted as you wanted.\n");
                         for (Movie movie : controller.getMovieCollection()){
                             System.out.println(movie);
@@ -198,6 +214,7 @@ public class Userinterface {
                     input.nextLine();
                     String searchMovieToEdit = input.nextLine();
 
+                    // Search for the movie in the collection you want to edit
                     Movie movieToEdit = controller.findMovieToEdit(searchMovieToEdit);
                     if (movieToEdit == null) {
                         System.out.println("domainmodel.Movie not found.");
@@ -221,6 +238,7 @@ public class Userinterface {
                         int editChoice = input.nextInt();
                         input.nextLine();
 
+                        // Check if user is done editing and want to exit the loop
                         if (editChoice == 7) {
                             editingMovie = false;
                             continue;
@@ -229,6 +247,8 @@ public class Userinterface {
                         if (editChoice >= 1 && editChoice <= 6) {
                             System.out.println("Enter new value:");
                             String newValue = input.nextLine();
+
+                            // Update the movie information
                             controller.editMovie(movieToEdit, editChoice, newValue);
 
                             System.out.println("\nUpdated movie information:");
@@ -243,7 +263,11 @@ public class Userinterface {
                     System.out.println("Enter the title of the movie you want to delete:");
                     input.nextLine();
                     String titleToDelete = input.nextLine();
+
+                    // Try to delete the movie using deleteMovie method
                     Movie deletedMovie = controller.deleteMovie(titleToDelete);
+
+                    // Check if deletion was successful
                     if (deletedMovie != null) {
                         System.out.println(deletedMovie.getTitle() + " has been deleted");
 

@@ -1,8 +1,8 @@
 How to Lose a Guy in 10 Days;Donald Petrie;2003;false;148;RomCom
-Pirates of the Caribbean the curse of the black pearl;Gore Verbinski;2003;true;163;Action
+Pirates of the Caribbean at worlds end;Gore Verbinski;2007;true;208;Action
 Pirates of the Caribbean dead man tell no tales;Gore Verbinski;2006;true;151;Action
 Pirates of the Caribbean on stranger tides;Rob Marshall;2011;true;161;Action
-Pirates of the Caribbean at worlds end;Gore Verbinski;2007;true;208;Action
+Pirates of the Caribbean the curse of the black pearl;Gore Verbinski;2003;true;163;Action
 Spiderman homecoming;Jon Watts;2017;true;133;Action
 Spiderman no way home;Jon Watts;2021;true;148;Action
 The Artist;Michel Hazanavicius;2011;false;100;Comedy
