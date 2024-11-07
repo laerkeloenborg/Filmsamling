@@ -1,6 +1,4 @@
 package domainmodel;
-
-
 import java.util.ArrayList;
 
 public class Controller {
@@ -34,19 +32,8 @@ public class Controller {
       return movieCollection.save();
    }
 
-   public ArrayList<Movie> load(){
-      return movieCollection.load();
-   }
-
    public ArrayList<Movie> getMovieCollection(){
      return movieCollection.getMovieCollection();
    }
-
-
-
-
-
-
-
 
 }

@@ -15,7 +15,7 @@ public class MovieCollection {
         movieCollection = fileHandler.loadListOfMovies();
     }
 
-    public ArrayList<Movie> getMovieCollection(){
+    public ArrayList<Movie> getMovieCollection() {
         return movieCollection;
     }
 
@@ -42,7 +42,6 @@ public class MovieCollection {
         return foundAny ? result : "No movies matching your request..";
     }
 
-
     public Movie findMovieToEdit(String title) {
         for (Movie movie : movieCollection) {
             if (movie.getTitle().toLowerCase().contains(title.toLowerCase())) {
@@ -51,7 +50,6 @@ public class MovieCollection {
         }
         return null;
     }
-
 
     public String editMovie(Movie movie, int choice, String newValue) {
         switch (choice) {
@@ -94,25 +92,9 @@ public class MovieCollection {
         return null;
     }
 
-    public ArrayList<Movie> save(){
+    public ArrayList<Movie> save() {
         return fileHandler.saveListOfMovies(movieCollection);
     }
-
-    public ArrayList<Movie> load(){
-        return fileHandler.loadListOfMovies();
-    }
-
-    @Override
-    public String toString() {
-        int counter = 0;
-        String empty = "";
-        for (Movie movie : movieCollection) {
-            counter++;
-            empty += "\n" + counter + ". " + movie.getTitle();
-        }
-        return empty;
-    }
-
 
 }
 

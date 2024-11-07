@@ -16,11 +16,10 @@ public class Movie {
         this.lengthInMinutes = lengthInMinutes;
         this.genre = genre;
     }
-
+//------- GETTER & SETTER -------
     public String getTitle(){
         return title;
     }
-
     public void setTitle (String title){
         this.title = title;
     }
@@ -28,7 +27,6 @@ public class Movie {
     public String getDirector(){
         return director;
     }
-
     public void setDirector(String director){
         this.director = director;
     }
@@ -36,7 +34,6 @@ public class Movie {
     public int getYearCreated(){
         return yearCreated;
     }
-
     public void setYearCreated(int yearCreated){
         this.yearCreated = yearCreated;
     }
@@ -44,7 +41,6 @@ public class Movie {
     public boolean getIsInColor(){
         return isInColor;
     }
-
     public void setIsInColor(boolean isInColor){
         this.isInColor = isInColor;
     }
@@ -52,7 +48,6 @@ public class Movie {
     public int getLengthInMinutes(){
         return lengthInMinutes;
     }
-
     public void setLengthInMinutes(int lengthInMinutes){
         this.lengthInMinutes = lengthInMinutes;
     }
@@ -60,11 +55,11 @@ public class Movie {
     public String getGenre(){
         return genre;
     }
-
     public void setGenre(String genre){
         this.genre = genre;
     }
 
+    //------- TO STRING --------
     @Override
     public String toString(){
         return  "\n\nTitle: " + this.title +
