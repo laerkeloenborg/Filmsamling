@@ -1,3 +1,5 @@
+package domainmodel;
+
 import java.util.Comparator;
 
 public class ComparatorYear implements Comparator<Movie> {

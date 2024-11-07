@@ -1,3 +1,5 @@
+package domainmodel;
+
 import java.util.*;
 
 public class Userinterface {
@@ -175,7 +177,7 @@ public class Userinterface {
                                 System.out.println("Unvalid number");
                         }
 
-                        Collections.sort(controller.load(), comparator);
+                        Collections.sort(controller.getMovieCollection(), comparator);
                         System.out.println("The movielist is now sorted as you wanted.\n");
                         for (Movie movie : controller.getMovieCollection()){
                             System.out.println(movie);
@@ -196,7 +198,7 @@ public class Userinterface {
 
                     Movie movieToEdit = controller.findMovieToEdit(searchMovieToEdit);
                     if (movieToEdit == null) {
-                        System.out.println("Movie not found.");
+                        System.out.println("domainmodel.Movie not found.");
                         break;
                     }
 

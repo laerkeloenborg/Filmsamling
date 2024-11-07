@@ -1,3 +1,5 @@
+package domainmodel;
+
 import java.util.Comparator;
 
 public class ComparatorColor implements Comparator<Movie> {
