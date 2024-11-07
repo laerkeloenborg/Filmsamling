@@ -8,6 +8,7 @@ public class Movie {
     private int lengthInMinutes;
     private String genre;
 
+    //Constructor of movie
     public Movie (String title, String director, int yearCreated, boolean isInColor, int lengthInMinutes, String genre){
         this.title = title;
         this.director = director;
@@ -60,6 +61,7 @@ public class Movie {
     }
 
     //------- TO STRING --------
+    // A toString to print out to the console in a nice order.
     @Override
     public String toString(){
         return  "\n\nTitle: " + this.title +
@@ -69,7 +71,7 @@ public class Movie {
                 "\nLength: " + this.lengthInMinutes  +
                 "\nGenre: " + this.genre;
     }
-
+    // A toString, so we can write to file in correct format for when we need to read file.
     public String toStringToFile() {
         return  this.title + ";" +
                 this.director  + ";" +
