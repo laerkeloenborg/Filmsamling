@@ -70,7 +70,7 @@ public class Movie {
                 "\nGenre: " + this.genre;
     }
 
-    public String toStringFile() {
+    public String toStringToFile() {
         return  this.title + ";" +
                 this.director  + ";" +
                 this.yearCreated + ";" +

@@ -32,6 +32,7 @@ public class Controller {
       return movieCollection.save();
    }
 
+
    public ArrayList<Movie> getMovieCollection(){
      return movieCollection.getMovieCollection();
    }
