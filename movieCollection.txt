@@ -6,4 +6,3 @@ Pirates of the Caribbean at worlds end;Gore Verbinski;2007;true;208;Action
 Spiderman homecoming;Jon Watts;2017;true;133;Action
 Spiderman no way home;Jon Watts;2021;true;148;Action
 The Artist;Michel Hazanavicius;2011;false;100;Comedy
-
