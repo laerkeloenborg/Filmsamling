@@ -23,6 +23,7 @@ public class MovieCollection {
         movieCollection.add(movie);
     }
 
+    //method to search for a specific movie in the movie collection
     public String searchMovies(String title) {
         String result = "";
         boolean foundAny = false;
@@ -39,9 +40,12 @@ public class MovieCollection {
             }
         }
 
+        //if foundAny is true return result if not return string
         return foundAny ? result : "No movies matching your request..";
     }
 
+
+    //method to find the specific movie you want to edit
     public Movie findMovieToEdit(String title) {
         for (Movie movie : movieCollection) {
             if (movie.getTitle().toLowerCase().contains(title.toLowerCase())) {
@@ -60,9 +64,12 @@ public class MovieCollection {
                 movie.setDirector(newValue);
                 break;
             case 3:
+                //Integer.parseInt take the String newValue and change to an int
                 movie.setYearCreated(Integer.parseInt(newValue));
                 break;
             case 4:
+                //if new value equals yes, isInColor returns true
+                //if not, it will return false
                 boolean isInColor = newValue.equalsIgnoreCase("yes");
                 movie.setIsInColor(isInColor);
                 break;

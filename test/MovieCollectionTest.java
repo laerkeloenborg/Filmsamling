@@ -63,9 +63,6 @@ class MovieCollectionTest {
         assertEquals(expectedResult,actualSize);
     }
 
-    @Disabled
-    void setMovieCollection() {
-    }
 
     @Test
     void addMovie() {
@@ -106,14 +103,13 @@ class MovieCollectionTest {
     }
 
 
-
-
     @Disabled
     void searchMovies() {
     }
 
     @Disabled
-    void findMovie() {
+    void findMovieToEdit(){
+
     }
 
     @Disabled
@@ -121,6 +117,12 @@ class MovieCollectionTest {
     }
 
     @Disabled
-    void testToString() {
+    void getNumbersOfMovies() {
     }
+
+    @Disabled
+    void save() {
+    }
+
+
 }
