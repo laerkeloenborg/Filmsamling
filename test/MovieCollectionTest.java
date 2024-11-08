@@ -1,5 +1,5 @@
-import domainmodel.Movie;
-import domainmodel.MovieCollection;
+import main.java.domainmodel.Movie;
+import main.java.domainmodel.MovieCollection;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;

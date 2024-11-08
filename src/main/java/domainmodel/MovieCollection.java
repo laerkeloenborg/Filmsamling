@@ -1,6 +1,6 @@
-package domainmodel;
+package main.java.domainmodel;
 
-import datasource.FileHandler;
+import main.java.datasource.FileHandler;
 
 import java.util.ArrayList;
 

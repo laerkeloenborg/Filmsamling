@@ -1,7 +1,9 @@
-package ui;
+package main.java.ui;
 
-import domainmodel.*;
+import main.java.datasource.domainmodel.*;
+import main.java.domainmodel.*;
 
+import java.domainmodel.*;
 import java.util.*;
 
 public class Userinterface {

@@ -1,4 +1,4 @@
-package domainmodel;
+package main.java.domainmodel;
 
 public class Movie {
     private String title;

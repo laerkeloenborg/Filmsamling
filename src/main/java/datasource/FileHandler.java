@@ -1,6 +1,6 @@
-package datasource;
+package main.java.datasource;
 
-import domainmodel.Movie;
+import main.java.domainmodel.Movie;
 
 import java.io.File;
 import java.io.FileNotFoundException;

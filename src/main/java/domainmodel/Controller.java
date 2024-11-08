@@ -1,4 +1,4 @@
-package domainmodel;
+package main.java.domainmodel;
 import java.util.ArrayList;
 
 public class Controller {
